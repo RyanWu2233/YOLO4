@@ -6,6 +6,7 @@
 
 Tensorflow 2.1 implementation for YOLO V4
 
-## Detection example:
+## YOLO V4 Detection example:
+Folloing picture illustrates the capability of object localization and object identification capability of YOLO V4. Table below lists objects recoginized by YOLO V4.  
 ![Result_1](./JPG/YOLO4_01.jpg)  
 ![Result_1A](./JPG/YOLO4_01A.jpg)  
