@@ -17,7 +17,7 @@ It is clear that YOLO V4 performance well for both large object (object 0, 1) an
 
 
 ## False positive example:
-YOLO V4 detects 26 objects Folloing picture 
+YOLO V4 detects 26 objects in the folloing picture. Object 26 is simply a black blank space between hand and face. However, YOLO V4 'guess' it is a cell phone. This is because YOLO V4 'seen' many cellphone is hold near the ear. Of course, it is false positive. 
 ![Result_3](./JPG/YOLO4_03B.jpg) 
 ![Result_3A](./JPG/YOLO4_03A.jpg)  
 
