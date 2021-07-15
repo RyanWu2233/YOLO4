@@ -1,4 +1,4 @@
-## YOLO4 - using TensorFlow 2.1
+## YOLO4 (You Only Look Once, version4) - using TensorFlow 2.1
 ![Python 3.7](https://img.shields.io/badge/python-3.7-green.svg?style=plastic)
 ![TensorFlow 2.10](https://img.shields.io/badge/tensorflow-2.10-green.svg?style=plastic)
 ![Repo COCO/VOC](https://img.shields.io/badge/Repository-COCO/VOC-green.svg?style=plastic)
@@ -6,5 +6,6 @@
 
 Tensorflow 2.1 implementation for YOLO V4
 
-
-
+## Detection example:
+![Result_1](./JPG/YOLO4_01.jpg)  
+![Result_1A](./JPG/YOLO4_01A.jpg)  
