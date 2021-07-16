@@ -1,4 +1,4 @@
-## YOLO4 (You Only Look Once, version4) - using TensorFlow 2.1
+## YOLO V4 (You Only Look Once, version4) - using TensorFlow 2.1
 ![Python 3.7](https://img.shields.io/badge/python-3.7-green.svg?style=plastic)
 ![TensorFlow 2.10](https://img.shields.io/badge/tensorflow-2.10-green.svg?style=plastic)
 ![Repo COCO/VOC](https://img.shields.io/badge/Repository-COCO/VOC-green.svg?style=plastic)
@@ -14,18 +14,32 @@ Folloing picture illustrates the capability of object localization and object id
 ![Result_1A](./JPG/YOLO4_01A.jpg)  
 
 ----
-## YOLOV4 network
+## YOLO V4 network
 The network of YOLO V4 is comprised of backbone, neck and head. Backbone is CSP-Darknet53. Darknet53 is backbone of YOLO V3. It is comprised of 53layers CBL (Conv-BN-LeakyReLU) blocks. YOLO V4 combined CSPnet and Darket to reduce the computation power and improves accuracy simultaneously. Neck is comprised of SPPnet and PANet. SPPnet enlarges receptive field while PANet fuses global and local feature map. 
 
 ![Network](./JPG/YOLO4_signalflow.jpg) 
 (Refer to 台灣人工智慧學校)
+
+----
+## YOLO V4 activation- Mish
 LeakyReLU activation expose gradient discontinuity at zero input. The activiation function in YOLO V4 backbone is replaced by Mish. Mish behaves more smoothly and prevent from gradient discontinuouity. 
+
 ![Mish](./JPG/Mish.jpg) 
 
+----
+## SPPnet
+YOLO V4 utilizes SPPnet to enlarge receptive of field.
+
+![SPPnet](./JPG/SPP_net.jpg) 
+
+----
+## Data augmentation 
+YOLO V4 uses Mosaic (mosaic 4 pictures into one) to enlarge the dataset. 
+
+![Mosaic](./JPG/Mosaic.jpg) 
 
 ----
 ## Difference between YOLO V3 and YOLO V4
-
 |    |YOLO V3 |YOLO V4|Remark|
 |----|----|----|----|
 |Backbone |Darknet53 |CSP-Darknet53 | Reduce parameters, improve accuracy|
@@ -36,7 +50,6 @@ LeakyReLU activation expose gradient discontinuity at zero input. The activiatio
 |Normalization|BN|CmBN|Suitable for small batch|
 |Augmentation|pixel-wise adjustment|Mosaic|Reduce GPU power|
 |Loss function|None|Label smoothing + Grid sensitivity| |
-
 
 ----
 ## Example: Global and local receptive field
