@@ -9,16 +9,19 @@ Tensorflow 2.1 implementation for YOLO V4
 
 
 ## YOLO V4 Detection example:
-Folloing picture illustrates the capability of object localization and object identification capability of YOLO V4. Table below lists objects recoginized by YOLO V4. S represents probability of each object where 1 means 100% sure. P represents confidence level of the object class. (x0, y0) means left and top boundary. (w,h) means width and height of the box.  
-It is clear that YOLO V4 performance well for both large object (object 0, 1) and small object (object 9, 10, 11 which are amplified on the right of image). 
+Folloing picture illustrates the capability of object localization and object identification capability of YOLO V4. Table below lists objects recoginized by YOLO V4. S represents probability of each object where 1 means 100% sure. P represents confidence level of the object class. (x0, y0) means left and top boundary. (w,h) means width and height of the box. YOLO V4 employs PANet to fuse local and global feature map (receptive field) and performs well for both large object (object 0, 1) and small object (object 9, 10, 11 which are amplified on the right of image). 
 ![Result_2](./JPG/YOLO4_01B.jpg) 
 ![Result_1A](./JPG/YOLO4_01A.jpg)  
 
 ----
 ## YOLOV4 network
-The network of YOLO V4 is comprised of backbone, neck and head. 
+The network of YOLO V4 is comprised of backbone, neck and head. Backbone is CSP-Darknet53. Darknet53 is backbone of YOLO V3. It is comprised of 53layers CBL (Conv-BN-LeakyReLU) blocks. YOLO V4 combined CSPnet and Darket to reduce the computation power and improves accuracy simultaneously. Neck is comprised of SPPnet and PANet. SPPnet enlarges receptive field while PANet fuses global and local feature map. 
+
 ![Network](./JPG/YOLO4_signalflow.jpg) 
 (Refer to 台灣人工智慧學校)
+LeakyReLU activation expose gradient discontinuity at zero input. The activiation function in YOLO V4 backbone is replaced by Mish. Mish behaves more smoothly and prevent from gradient discontinuouity. 
+![Mish](./JPG/Mish.jpg) 
+
 
 ----
 ## Difference between YOLO V3 and YOLO V4
