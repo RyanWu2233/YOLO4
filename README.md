@@ -38,6 +38,9 @@ LeakyReLU activation expose gradient discontinuity at zero input. The activiatio
 |Loss function|None|Label smoothing + Grid sensitivity| |
 
 
+----
+## Example: Global and local receptive field
+Following picture illustrates how global receptive field helps to identify small object. Object 3 is a person sitting in the bus. The PANet struture help to pass the information of  large scale receptive of field to small obejct. That is, YOLO V4 identifies object 3 is 'person' because that the object is inside the window of bus. 
 ![Result_2](./JPG/YOLO4_02.jpg) 
 ![Result_2A](./JPG/YOLO4_02A.jpg)  
 
