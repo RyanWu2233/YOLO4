@@ -14,11 +14,29 @@ It is clear that YOLO V4 performance well for both large object (object 0, 1) an
 ![Result_2](./JPG/YOLO4_01B.jpg) 
 ![Result_1A](./JPG/YOLO4_01A.jpg)  
 
-![Result_2](./JPG/YOLO4_02.jpg) 
-![Result_2A](./JPG/YOLO4_02A.jpg)  
-
 ----
 ## YOLOV4 network
+The network of YOLO V4 is comprised of backbone, neck and head. 
+![Network](./JPG/YOLO4_signalflow.jpg) 
+(Refer to 台灣人工智慧學校)
+
+----
+## Difference between YOLO V3 and YOLO V4
+
+|    |YOLO V3 |YOLO V4|Remark|
+|----|----|----|----|
+|Backbone |Darknet53 |CSP-Darknet53 | Reduce parameters, improve accuracy|
+|Neck|FPN|PANet + SPP|Fusion local and global features|
+|Head|YOLO|YOLO|None|
+|Activations|LeakyReLU|LeakyReLU + Mish|Stable gradient|
+|Bounding box regression loss|MSE loss|CIou loss|Improve accuracy|
+|Normalization|BN|CmBN|Suitable for small batch|
+|Augmentation|pixel-wise adjustment|Mosaic|Reduce GPU power|
+|Loss function|None|Label smoothing + Grid sensitivity| |
+
+
+![Result_2](./JPG/YOLO4_02.jpg) 
+![Result_2A](./JPG/YOLO4_02A.jpg)  
 
 
 ## False positive example:
